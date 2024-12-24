@@ -49,15 +49,12 @@ public class Task {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Task task = (Task) obj;
-        return id == task.id &&
-                Objects.equals(title, task.title) &&
-                Objects.equals(description, task.description) &&
-                status == task.status;
+        return id == task.id; //оставил одно поле id
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, status);
+        return Objects.hash(id); //оставил одно поле id
     }
 }
 
