@@ -1,14 +1,15 @@
 import java.util.ArrayList;
 
 public class Epic extends Task {
-   // public TaskStatus taskstatus;
-  // private TaskTracker taskTracker;
+
+    private TaskTracker taskTracker = new TaskTracker();
 
     private ArrayList<Integer> taskIds = new ArrayList<>();
 
     public Epic(int id, String name, String description) {
 
         super(id, name, description, TaskStatus.NEW);
+
     }
 
     public ArrayList<Integer> getTaskIds() {
@@ -23,7 +24,7 @@ public class Epic extends Task {
         int completed = 0;
 
         for (Integer subTaskId : taskIds) {
-            SubTask subTask = TaskTracker.getSubTask(subTaskId);
+            SubTask subTask = taskTracker.getSubTask(subTaskId);
             if (subTask != null && subTask.getStatus() == TaskStatus.DONE) {
                 completed++;
             }

@@ -66,19 +66,20 @@ public class TaskTracker {
         }
     }
 
-    public  SubTask getSubTask(int subTaskId) {
+    public SubTask getSubTask(int subTaskId) {
         return subTasks.get(subTaskId);
     }
-/*добавил методы ниже:
-    Task getTask(int id)
-    Epic getEpic(int id)
-    ArrayList<Task> getTasks()
-    ArrayList<Subtask> getSubtasks()
-    ArrayList<Epic> getEpics()
-    ArrayList<Subtask> getEpicSubtasks(int epicId)
-    void deleteTasks()
-    void deleteSubtasks()
-    void deleteEpics()*/
+
+    /*добавил методы ниже:
+        Task getTask(int id)
+        Epic getEpic(int id)
+        ArrayList<Task> getTasks()
+        ArrayList<Subtask> getSubtasks()
+        ArrayList<Epic> getEpics()
+        ArrayList<Subtask> getEpicSubtasks(int epicId)
+        void deleteTasks()
+        void deleteSubtasks()
+        void deleteEpics()*/
     public Task getTask(int id) {
         return tasks.get(id);
     }
