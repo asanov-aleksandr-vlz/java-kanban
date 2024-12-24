@@ -1,6 +1,70 @@
+import java.util.Objects;
 public class Task {
-    public int id;
-    public String title;
-    public String description;
-    public TaskStatus status;
+    private int id;
+    private String title;
+    private String description;
+    private TaskStatus status;
+
+    public Task(int id, String title, String description, TaskStatus status) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.status = status;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public TaskStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TaskStatus status) {
+        this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Task task = (Task) obj;
+        return id == task.id &&
+                Objects.equals(title, task.title) &&
+                Objects.equals(description, task.description) &&
+                status == task.status;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, description, status);
+    }
 }
+
+
+
+
+
+
+
+
